@@ -31,6 +31,14 @@ class Program
                     dataWriter = new ConsoleWriter();
                     dataFormatter = new PlainTextFormatter();
                     break;
+                case "csv":
+                    dataWriter = new FileWriter("result.csv");
+                    dataFormatter = new CSVFormatter();
+                    break;
+                case "html":
+                    dataWriter = new FileWriter("result.html");
+                    dataFormatter = new HTMLTableFormatter();
+                    break;
                 default:
                     matched = false;
                     break;
