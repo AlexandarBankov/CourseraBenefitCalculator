@@ -1,9 +1,7 @@
-﻿using CourseraBenefitCalculator.Classes.Models;
-
-namespace CourseraBenefitCalculator.Interfaces
+﻿namespace CourseraBenefitCalculator.Interfaces
 {
     interface IDataWriter
     {
-        public void Write(List<Student> Students, string Path);
+        public void Write(IList<string> lines, string Path);
     }
 }

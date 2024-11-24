@@ -18,7 +18,9 @@ class Program
         }
 
         IDataGetter dataGetter = new SQLDataReader();
+        var students = dataGetter.students(parser);
         IDataWriter dataWriter = new ConsoleWriter();
+        IDataFormatter dataFormatter = new PlainTextFormatter();
 
         foreach (string outType in parser.OutputTypes)
         {
@@ -27,12 +29,13 @@ class Program
             {
                 case "console":
                     dataWriter = new ConsoleWriter();
+                    dataFormatter = new PlainTextFormatter();
                     break;
                 default:
                     matched = false;
                     break;
             }
-            if (matched) dataWriter.Write(dataGetter.students(parser), parser.OutputPath);
+            if (matched) dataWriter.Write(dataFormatter.Format(students), parser.OutputPath);
         }
     }
 }
