@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CourseraBenefitCalculator": {
+      "commandName": "Project",
+      "commandLineArgs": "-mincredits 10 -begin 2019-07-17 -end 2019-12-04 -formats console -path C:\\"
+    }
+  }
+}
